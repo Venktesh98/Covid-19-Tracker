@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./App.module.css";
-import Card from "./components/ShowCard";
+import Card from "./components/Cards/CardInfo";
 
 function App() {
   return (
