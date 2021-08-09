@@ -1,0 +1,31 @@
+.site-card-border-less-wrapper {
+  padding: 30px;
+}
+
+.cardContent{
+  text-align: left;
+}
+
+.confirmed {
+  background-color: #add8e6;
+}
+
+.recovered {
+  background-color: #ace1af;
+}
+
+.deaths {
+  background-color: #fa8072;
+}
+
+.active {
+  background-color: #d0b086;
+}
+
+.date {
+  font-size: 0.9rem;
+}
+
+.lastUpdated {
+  font-size: 1.25rem;
+}
