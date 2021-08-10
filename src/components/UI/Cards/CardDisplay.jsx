@@ -15,7 +15,7 @@ function CardDisplay({ title, covidStatus, message }) {
   // conditional classNames
   let covidStatusLabel = "";
   if (title === "Infected") {
-    covidStatusLabel = styles.confirmed;
+    covidStatusLabel = styles.infected;
   }
 
   if (title === "Recovered") {
