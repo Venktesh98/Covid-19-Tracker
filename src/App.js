@@ -4,13 +4,12 @@ import {
   fetchAllCovidData,
   fetchAllCountries,
 } from "./components/Services/useAxios";
-import Card from "./components/UI/Cards/CardInfo";
+import CardInfo from "./components/UI/Cards/CardInfo";
 import Countries from "./components/UI/DropDown/Countries";
 
 function App() {
   const [covidStatus, setCovidStatus] = useState("");
-  const [active, setActive] = useState("");
-  const [countries, setCountries] = useState([])
+  const [countries, setCountries] = useState([]);
 
   useEffect(() => {
     // grabs all covid-19 Data worldwide
@@ -18,7 +17,6 @@ function App() {
       .then((response) => {
         console.log("Response:", response.data);
         setCovidStatus(response?.data);
-        setActive("active");
       })
       .catch((error) => {
         console.log("Error:", error);
@@ -28,7 +26,7 @@ function App() {
     fetchAllCountries()
       .then((response) => {
         console.log("Country:", response);
-        setCountries(response.data.countries)
+        setCountries(response.data.countries);
       })
       .catch((error) => {
         console.log("Error:", error);
@@ -43,7 +41,7 @@ function App() {
           className={styles.covidImage}
         />
       </div>
-      <Card covidStatus={covidStatus} active={active} />
+      <CardInfo covidStatus={covidStatus} />
       <Countries countries={countries} />
     </div>
   );

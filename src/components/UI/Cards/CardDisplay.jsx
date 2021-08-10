@@ -8,6 +8,8 @@ import CountUp from "react-countup";
 function CardDisplay({ title, covidStatus, covidStatusClassName, message }) {
   const { Title } = Typography;
 
+  console.log("CcovidStatusClassName:",covidStatusClassName);
+
   let format = "ddd MMM Do YYYY";
   let timeFormat = " h:mm:ss a";
   let formattedDate = moment().format(format, covidStatus?.lastUpdate);
@@ -15,8 +17,9 @@ function CardDisplay({ title, covidStatus, covidStatusClassName, message }) {
 
   // conditional classNames
   let covidStatusLabel = "";
-  if (covidStatusClassName === "confirmed") {
-    covidStatusLabel = styles.confirmed;
+  if (title === "Infected") {
+    // covidStatusLabel = styles.confirmed;
+    covidStatusLabel = covidStatusClassName;
   }
 
   if (covidStatusClassName === "recovered") {
