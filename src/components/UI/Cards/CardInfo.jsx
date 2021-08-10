@@ -81,28 +81,24 @@ function CardInfo({ covidStatus }) {
         <CardDisplay
           title="Infected"
           covidStatus={confirmed?.value}
-          covidStatusClassName={styles.confirmed}
           message="Total Infected Cases of Covid-19 Currently"
         />
         ,
         <CardDisplay
           title="Recovered"
           covidStatus={recovered?.value}
-          covidStatusClassName={"recovered"}
           message="Total Recovered Cases of Covid-19 Currently"
         />
         ,
         <CardDisplay
           title="Deaths"
           covidStatus={deaths?.value}
-          covidStatusClassName={"deaths"}
           message="Total Deaths of Covid-19 Currently"
         />
         ,
         <CardDisplay
           title="Active"
           covidStatus={totalActiveCases?.value}
-          covidStatusClassName={"active"}
           message="Total Active Cases of Covid-19 Currently"
         />
       </>

@@ -5,11 +5,8 @@ import { Typography } from "antd";
 import styles from "./CardDisplay.module.css";
 import CountUp from "react-countup";
 
-function CardDisplay({ title, covidStatus, covidStatusClassName, message }) {
+function CardDisplay({ title, covidStatus, message }) {
   const { Title } = Typography;
-
-  console.log("CcovidStatusClassName:",covidStatusClassName);
-
   let format = "ddd MMM Do YYYY";
   let timeFormat = " h:mm:ss a";
   let formattedDate = moment().format(format, covidStatus?.lastUpdate);
@@ -18,19 +15,18 @@ function CardDisplay({ title, covidStatus, covidStatusClassName, message }) {
   // conditional classNames
   let covidStatusLabel = "";
   if (title === "Infected") {
-    // covidStatusLabel = styles.confirmed;
-    covidStatusLabel = covidStatusClassName;
+    covidStatusLabel = styles.confirmed;
   }
 
-  if (covidStatusClassName === "recovered") {
+  if (title === "Recovered") {
     covidStatusLabel = styles.recovered;
   }
 
-  if (covidStatusClassName === "deaths") {
+  if (title === "Deaths") {
     covidStatusLabel = styles.deaths;
   }
 
-  if (covidStatusClassName === "active") {
+  if (title === "Active") {
     covidStatusLabel = styles.active;
   }
 
