@@ -34,9 +34,9 @@ function CardDisplay({ title, covidStatus, message }) {
     <div className={styles["site-card-border-less-wrapper"]}>
       <Col span={8}>
         <Card
+          id={styles.covidCard}
           title={title}
           bordered={false}
-          style={{ width: 240 }}
           className={covidStatusLabel}
           hoverable
         >

@@ -2,24 +2,32 @@
   padding: 30px;
 }
 
+#covidCard {
+  width: 240px;
+}
+
 .cardContent {
   text-align: left;
 }
 
 .infected {
   background-color: #add8e6;
+  border-bottom: 10px solid #67bffd;
 }
 
 .recovered {
   background-color: #ace1af;
+  border-bottom: 10px solid #3cb371;
 }
 
 .deaths {
   background-color: #fa8072;
+  border-bottom: 10px solid #f7604f;
 }
 
 .active {
   background-color: #d0b086;
+  border-bottom: 10px solid #c99653;
 }
 
 .date {
