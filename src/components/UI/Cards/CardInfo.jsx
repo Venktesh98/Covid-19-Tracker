@@ -5,7 +5,7 @@ import CardDisplay from "./CardDisplay";
 import styles from "./CardInfo.module.css";
 import { Row } from "antd";
 
-function CardInfo({ covidStatus }) {
+function CardInfo({ covidStatus, setActiveData }) {
   console.log("covidStatus:", covidStatus);
   // object Destructuring
   const { confirmed, recovered, deaths } = covidStatus;
@@ -75,6 +75,8 @@ function CardInfo({ covidStatus }) {
     const totalActiveCases = {
       value: confirmed?.value - recovered?.value - deaths?.value,
     };
+
+    setActiveData(totalActiveCases?.value);
 
     return (
       <>
