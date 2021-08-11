@@ -5,11 +5,13 @@ import {
   fetchAllCountries,
 } from "./components/Services/useAxios";
 import CardInfo from "./components/UI/Cards/CardInfo";
+import ChartDisplay from "./components/UI/Charts/ChartDisplay";
 import Countries from "./components/UI/DropDown/Countries";
 
 function App() {
   const [covidStatus, setCovidStatus] = useState("");
   const [countries, setCountries] = useState([]);
+  const [activeCases, setActiveCases] = useState("");
 
   useEffect(() => {
     // grabs all covid-19 Data worldwide
@@ -33,6 +35,8 @@ function App() {
       });
   }, []);
 
+  console.log("ACTIVE:", activeCases);
+
   return (
     <div className={styles.main}>
       <div>
@@ -41,8 +45,9 @@ function App() {
           className={styles.covidImage}
         />
       </div>
-      <CardInfo covidStatus={covidStatus} />
+      <CardInfo covidStatus={covidStatus} setActiveData={setActiveCases} />
       <Countries countries={countries} />
+      <ChartDisplay covidStatus={covidStatus} activeCasesData={activeCases} />
     </div>
   );
 }
