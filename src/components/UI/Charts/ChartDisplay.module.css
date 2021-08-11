@@ -1,0 +1,19 @@
+.doughnutContainer {
+  background-color: #e5e4e2;
+}
+.doughnut {
+  width: 50%;
+  margin: 3rem auto;
+}
+
+.coronaImage {
+  background-color: chocolate;
+  /* height: 50v; */
+  width: 30%;
+}
+.coronaImageContainer {
+  background-color: crimson;
+  width: 90%;
+  height: 50vh;
+  transform: "translate(-20%, -50%)";
+}
