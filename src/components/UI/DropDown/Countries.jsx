@@ -1,30 +1,28 @@
-import { Button, Dropdown, Menu, Space } from "antd";
-import { DownOutlined } from "@ant-design/icons";
-import React, { useState } from "react";
+import { Select } from "antd";
+import React from "react";
 import styles from "./Countries.module.css";
 
-function Countries({ countries }) {
-  console.log("countries:", countries);
-  const handleMenuClick = (data) => {
-    console.log("Data:", data);
+function Countries({ countries, setSelectedCountry }) {
+  const { Option } = Select;
+
+  const handleMenuClick = (country) => {
+    console.log("country:", country);
+    setSelectedCountry(country);
   };
 
-  const menu = (
-    <Menu className={styles.menuItem}>
-      {countries.map((country, key) => (
-        <Menu.Item key={key} onClick={() => handleMenuClick(country.name)}>
-          {country.name}
-        </Menu.Item>
-      ))}
-    </Menu>
-  );
   return (
     <div>
-      <Dropdown overlay={menu} className={styles.antDropDown}>
-        <Button>
-          Global <DownOutlined />
-        </Button>
-      </Dropdown>
+      <Select
+        defaultValue="Global"
+        onChange={(data) => handleMenuClick(data)}
+        className={styles.antDropDown}
+      >
+        {countries.map((country, key) => (
+          <Option value={country.name} key={key}>
+            {country.name}
+          </Option>
+        ))}
+      </Select>
     </div>
   );
 }
