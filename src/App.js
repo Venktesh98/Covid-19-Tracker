@@ -12,6 +12,7 @@ function App() {
   const [covidStatus, setCovidStatus] = useState("");
   const [countries, setCountries] = useState([]);
   const [activeCases, setActiveCases] = useState("");
+  const [selectedCountry, setSelectedCountry] = useState("");
 
   useEffect(() => {
     // grabs all covid-19 Data worldwide
@@ -35,7 +36,7 @@ function App() {
       });
   }, []);
 
-  console.log("ACTIVE:", activeCases);
+  console.log("In Country:", selectedCountry);
 
   return (
     <div className={styles.main}>
@@ -46,8 +47,15 @@ function App() {
         />
       </div>
       <CardInfo covidStatus={covidStatus} setActiveData={setActiveCases} />
-      <Countries countries={countries} />
-      <ChartDisplay covidStatus={covidStatus} activeCasesData={activeCases} />
+      <Countries
+        countries={countries}
+        setSelectedCountry={setSelectedCountry}
+      />
+      <ChartDisplay
+        covidStatus={covidStatus}
+        activeCasesData={activeCases}
+        selectedCountry={selectedCountry}
+      />
     </div>
   );
 }

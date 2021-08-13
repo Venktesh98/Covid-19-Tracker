@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "antd/dist/antd.css";
-import axios from "axios";
 import CardDisplay from "./CardDisplay";
 import styles from "./CardInfo.module.css";
 import { Row } from "antd";
