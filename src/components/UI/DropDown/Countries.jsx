@@ -5,7 +5,7 @@ import styles from "./Countries.module.css";
 function Countries({ countries, setSelectedCountry }) {
   const { Option } = Select;
 
-  const handleMenuClick = (country) => {
+  const handleSelectedCountryName = (country) => {
     console.log("country:", country);
     setSelectedCountry(country);
   };
@@ -14,7 +14,7 @@ function Countries({ countries, setSelectedCountry }) {
     <div>
       <Select
         defaultValue="Global"
-        onChange={(data) => handleMenuClick(data)}
+        onChange={(data) => handleSelectedCountryName(data)}
         className={styles.antDropDown}
       >
         {countries.map((country, key) => (

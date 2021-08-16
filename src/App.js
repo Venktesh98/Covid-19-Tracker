@@ -56,6 +56,7 @@ function App() {
         activeCasesData={activeCases}
         selectedCountry={selectedCountry}
       />
+      {/* <VerticalBar /> */}
     </div>
   );
 }
