@@ -3,6 +3,7 @@ import styles from "./ChartDisplay.module.css";
 import { Doughnut } from "react-chartjs-2";
 import { colors } from "../../Services/colors";
 import { Typography } from "antd";
+import CountryChart from "./CountryChart";
 
 function ChartDisplay({ covidStatus, activeCasesData, selectedCountry }) {
   const { Title } = Typography;
@@ -13,7 +14,7 @@ function ChartDisplay({ covidStatus, activeCasesData, selectedCountry }) {
     labels: ["Infected", "Recovered", "Deaths", "Active"],
     datasets: [
       {
-        // label: "# of Votes",
+        label: "Globally",
         data: [
           confirmed?.value,
           recovered?.value,
@@ -30,7 +31,7 @@ function ChartDisplay({ covidStatus, activeCasesData, selectedCountry }) {
   return (
     <div className={styles.doughnutContainer}>
       {selectedCountry ? (
-        "COUNTRY"
+        <CountryChart countryName={selectedCountry} />
       ) : (
         <div className={styles.doughnut}>
           <Doughnut
