@@ -5,9 +5,9 @@ import { colors } from "../../Services/colors";
 import { fetchByCountryName } from "../../Services/useAxios";
 import styles from "./CountryChart.module.css";
 
-function CountryChart({ countryName }) {
+function CountryChart({ countryName, setCountryWiseData, countryWiseData }) {
   const { Title } = Typography;
-  const [countryWiseData, setCountryWiseData] = useState("");
+
   useEffect(() => {
     fetchByCountryName(countryName)
       .then((response) => {
@@ -55,7 +55,9 @@ function CountryChart({ countryName }) {
       <div className={styles.countryWiseData}>
         <Bar data={data} />
       </div>
-      <Title level={5} className={styles.tagline}>Country Wise Covid-19 Data</Title>
+      <Title level={5} className={styles.tagline}>
+        Country Wise Covid-19 Data
+      </Title>
     </div>
   );
 }
