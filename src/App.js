@@ -13,6 +13,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [activeCases, setActiveCases] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("");
+  const [countryWiseData, setCountryWiseData] = useState("");
 
   useEffect(() => {
     // grabs all covid-19 Data worldwide
@@ -46,7 +47,11 @@ function App() {
           className={styles.covidImage}
         />
       </div>
-      <CardInfo covidStatus={covidStatus} setActiveData={setActiveCases} />
+      <CardInfo
+        covidStatus={covidStatus}
+        setActiveData={setActiveCases}
+        countryWiseData={countryWiseData}
+      />
       <Countries
         countries={countries}
         setSelectedCountry={setSelectedCountry}
@@ -55,8 +60,9 @@ function App() {
         covidStatus={covidStatus}
         activeCasesData={activeCases}
         selectedCountry={selectedCountry}
+        setCountryWiseData={setCountryWiseData}
+        countryWiseData={countryWiseData}
       />
-      {/* <VerticalBar /> */}
     </div>
   );
 }
