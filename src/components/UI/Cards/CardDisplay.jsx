@@ -6,6 +6,7 @@ import styles from "./CardDisplay.module.css";
 import CountUp from "react-countup";
 
 function CardDisplay({ title, covidStatus, message }) {
+  console.log("covidStatus:",covidStatus);
   const { Title } = Typography;
   let format = "ddd MMM Do YYYY";
   let timeFormat = " h:mm:ss a";

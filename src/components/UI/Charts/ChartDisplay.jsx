@@ -5,9 +5,15 @@ import { colors } from "../../Services/colors";
 import { Typography } from "antd";
 import CountryChart from "./CountryChart";
 
-function ChartDisplay({ covidStatus, activeCasesData, selectedCountry }) {
+function ChartDisplay({
+  covidStatus,
+  activeCasesData,
+  selectedCountry,
+  setCountryWiseData,
+  countryWiseData
+}) {
   const { Title } = Typography;
-  console.log("In Chart");
+  console.log("In Chart",covidStatus);
   const { confirmed, recovered, deaths } = covidStatus;
 
   const data = {
@@ -31,7 +37,11 @@ function ChartDisplay({ covidStatus, activeCasesData, selectedCountry }) {
   return (
     <div className={styles.doughnutContainer}>
       {selectedCountry ? (
-        <CountryChart countryName={selectedCountry} />
+        <CountryChart
+          countryName={selectedCountry}
+          setCountryWiseData={setCountryWiseData}
+          countryWiseData={countryWiseData}
+        />
       ) : (
         <div className={styles.doughnut}>
           <Doughnut
