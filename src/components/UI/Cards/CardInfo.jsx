@@ -4,7 +4,6 @@ import CardDisplay from "./CardDisplay";
 import { Row } from "antd";
 
 function CardInfo({ covidStatus, setActiveData, countryWiseData }) {
-  console.log("covidStatus Fatat:", covidStatus);
 
   // object Destructuring
   const { confirmed, recovered, deaths } = covidStatus;

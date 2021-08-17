@@ -19,7 +19,6 @@ function App() {
     // grabs all covid-19 Data worldwide
     fetchAllCovidData()
       .then((response) => {
-        console.log("Response:", response.data);
         setCovidStatus(response?.data);
       })
       .catch((error) => {
@@ -29,15 +28,12 @@ function App() {
     // grabs all countries around worldwide
     fetchAllCountries()
       .then((response) => {
-        console.log("Country:", response);
         setCountries(response.data.countries);
       })
       .catch((error) => {
         console.log("Error:", error);
       });
   }, []);
-
-  console.log("In Country:", selectedCountry);
 
   return (
     <div className={styles.main}>

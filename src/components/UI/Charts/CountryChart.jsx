@@ -11,7 +11,6 @@ function CountryChart({ countryName, setCountryWiseData, countryWiseData }) {
   useEffect(() => {
     fetchByCountryName(countryName)
       .then((response) => {
-        console.log("Country Name Response:", response);
         setCountryWiseData(response?.data);
       })
       .catch((error) => {
@@ -25,8 +24,6 @@ function CountryChart({ countryName, setCountryWiseData, countryWiseData }) {
   const totalActiveCasesInCountry = {
     value: confirmed?.value - recovered?.value - deaths?.value,
   };
-
-  console.log("totalActiveCasesInCountry:", totalActiveCasesInCountry);
 
   const data = {
     labels: ["Infected", "Recovered", "Deaths", "Active"],
