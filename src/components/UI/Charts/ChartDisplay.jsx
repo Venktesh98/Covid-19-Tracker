@@ -10,10 +10,10 @@ function ChartDisplay({
   activeCasesData,
   selectedCountry,
   setCountryWiseData,
-  countryWiseData
+  countryWiseData,
 }) {
   const { Title } = Typography;
-  console.log("In Chart",covidStatus);
+  console.log("In Chart", covidStatus);
   const { confirmed, recovered, deaths } = covidStatus;
 
   const data = {
@@ -35,7 +35,7 @@ function ChartDisplay({
   };
 
   return (
-    <div className={styles.doughnutContainer}>
+    <div className={styles.graphContainer}>
       {selectedCountry ? (
         <CountryChart
           countryName={selectedCountry}
@@ -51,10 +51,16 @@ function ChartDisplay({
               maintainAspectRatio: true,
             }}
           />
-          <Title level={5}>Worldwide Covid-19 Data</Title>
-          {/* <div className={styles.coronaImageContainer}>
-          <img src={process.env.PUBLIC_URL + "/corona.jpg"} className={styles.coronaImage} />
-        </div> */}
+          <Title level={5} style={{ marginBottom: "-40%" }}>
+            Worldwide Covid-19 Data
+          </Title>
+          <div className={styles.coronaImageContainer}>
+            <img
+              src={process.env.PUBLIC_URL + "/corona.png"}
+              className={styles.coronaImage}
+              alt="corona img"
+            />
+          </div>
         </div>
       )}
     </div>
