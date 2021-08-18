@@ -41,6 +41,7 @@ function App() {
         <img
           src={process.env.PUBLIC_URL + "/covid.png"}
           className={styles.covidImage}
+          alt="Corona banner img"
         />
       </div>
       <CardInfo

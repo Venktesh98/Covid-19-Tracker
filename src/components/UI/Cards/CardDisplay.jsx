@@ -1,6 +1,6 @@
 import React from "react";
 import moment from "moment";
-import { Card, Col, Row } from "antd";
+import { Card, Col } from "antd";
 import { Typography } from "antd";
 import styles from "./CardDisplay.module.css";
 import CountUp from "react-countup";

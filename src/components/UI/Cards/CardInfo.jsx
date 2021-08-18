@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "antd/dist/antd.css";
 import CardDisplay from "./CardDisplay";
 import { Row } from "antd";
 
 function CardInfo({ covidStatus, setActiveData, countryWiseData }) {
-
   // object Destructuring
   const { confirmed, recovered, deaths } = covidStatus;
 
