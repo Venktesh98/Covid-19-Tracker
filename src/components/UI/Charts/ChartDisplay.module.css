@@ -1,14 +1,15 @@
 .graphContainer {
   background-color: #ffffff;
+  height: 90vh;
 }
 .doughnut {
   width: 40%;
   margin: 3rem auto;
   /* border: 1px solid black; */
 }
-
 .coronaImageContainer {
-  transform: translate(16.5%, -76.5%);
+  margin-top: -41%;
+  transform: translate(16.5%, -76.8%);
   /* border:1px solid rgb(157, 255, 0); */
   width: 75%;
 }

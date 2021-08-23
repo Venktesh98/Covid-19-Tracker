@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import { Typography } from "antd";
-import { colors } from "../../Services/colors";
+import { colors } from "../../helpers/colors";
 import { fetchByCountryName } from "../../Services/useAxios";
 import styles from "./CountryChart.module.css";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./ChartDisplay.module.css";
 import { Doughnut } from "react-chartjs-2";
-import { colors } from "../../Services/colors";
+import { colors } from "../../helpers/colors";
 import { Typography } from "antd";
 import CountryChart from "./CountryChart";
 
@@ -51,7 +51,7 @@ function ChartDisplay({
               maintainAspectRatio: true,
             }}
           />
-          <Title level={5} style={{ marginBottom: "-40%" }}>
+          <Title level={5} /* style={{ marginBottom: "-40%" }} */>
             Worldwide Covid-19 Data
           </Title>
           <div className={styles.coronaImageContainer}>
