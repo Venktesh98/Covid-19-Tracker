@@ -1,5 +1,7 @@
 # Covid-19 Tracker
-    Covid-Tracker by the name itself it comes to know about the tracking of the current covid cases that are going currently in the world, The tracker shows the real time data of the covid cases coming across the globe. 
+    Covid-Tracker by the name itself it comes to know about the tracking of the current covid cases that 
+    are going currently in the world, The tracker shows the real time data of the covid cases coming across 
+    the globe. 
 
 ### Getting Started
 Clone the repository and install all the dependencies using `npm install`
