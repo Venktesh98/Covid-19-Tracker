@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import { Typography } from "antd";
 import { colors } from "../../helpers/colors";
