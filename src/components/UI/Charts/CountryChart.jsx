@@ -8,7 +8,7 @@ import styles from "./CountryChart.module.css";
 function CountryChart({ countryName, setCountryWiseData, countryWiseData }) {
   const { Title } = Typography;
 
-  useEffect(() => {
+  const fetchCountryData = useCallback(() => {
     fetchByCountryName(countryName)
       .then((response) => {
         setCountryWiseData(response?.data);
@@ -16,8 +16,19 @@ function CountryChart({ countryName, setCountryWiseData, countryWiseData }) {
       .catch((error) => {
         console.log("Error:", error);
       });
-    return () => {};
   }, [countryName]);
+
+  useEffect(() => {
+    // fetchByCountryName(countryName)
+    //   .then((response) => {
+    //     setCountryWiseData(response?.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log("Error:", error);
+    //   });
+    // return () => {};
+    fetchCountryData();
+  }, [fetchCountryData]);
 
   // destructuring according to the cases
   const { confirmed, recovered, deaths } = countryWiseData;
