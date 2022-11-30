@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import { Typography } from "antd";
 import { colors } from "../../helpers/colors";
@@ -7,8 +7,8 @@ import styles from "./CountryChart.module.css";
 
 function CountryChart({ countryName, setCountryWiseData, countryWiseData }) {
   const { Title } = Typography;
-
-  const fetchCountryData = useCallback(() => {
+  
+  useEffect(() => {
     fetchByCountryName(countryName)
       .then((response) => {
         setCountryWiseData(response?.data);
@@ -16,19 +16,8 @@ function CountryChart({ countryName, setCountryWiseData, countryWiseData }) {
       .catch((error) => {
         console.log("Error:", error);
       });
+    return () => {};
   }, [countryName]);
-
-  useEffect(() => {
-    // fetchByCountryName(countryName)
-    //   .then((response) => {
-    //     setCountryWiseData(response?.data);
-    //   })
-    //   .catch((error) => {
-    //     console.log("Error:", error);
-    //   });
-    // return () => {};
-    fetchCountryData();
-  }, [fetchCountryData]);
 
   // destructuring according to the cases
   const { confirmed, recovered, deaths } = countryWiseData;
